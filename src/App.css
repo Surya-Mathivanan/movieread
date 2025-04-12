@@ -1,0 +1,391 @@
+/* App.css */
+
+.movie-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 14px;
+  margin: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.movie-card.watched {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-color: #a7f3d0;
+}
+
+.movie-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.genre-tag {
+  background-color: #cd0494;
+  color: #9cd7f7;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 8px;
+}
+
+.movie-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.movie-actions button {
+  border: none;
+  padding: 7px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-size: 14px;
+}
+
+.movie-actions button:hover {
+  opacity: 0.9;
+}
+
+.movie-actions button:nth-child(1) {
+  background-color: #e0f7fa;
+  color: #00796b;
+}
+
+.movie-actions button:nth-child(2) {
+  background-color: #ffe4e6;
+  color: #c62828;
+}
+
+.movie-actions button:nth-child(3) {
+  background-color: #fce7f3;
+  color: #6a1b9a;
+}
+
+.delete-btn {
+  background-color: #fee2e2 !important;
+  color: #b91c1c !important;
+}
+
+.movie-stats-container {
+  margin-left: 220px; /* to offset sidebar */
+  padding: 2rem;
+  max-width: 800px;
+  margin-top: 2rem;
+  background-color: #f9fafb;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease-in-out;
+}
+
+.movie-stats-container:hover {
+  transform: scale(1.01);
+}
+
+.movie-stats-container h2 {
+  font-size: 1.8rem;
+  color: #111827;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 0.5rem;
+}
+
+.stats-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.stats-list li {
+  padding: 0.5rem 0;
+  font-size: 1rem;
+  color: #374151;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.stats-list li:last-child {
+  border-bottom: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #1e1e2f, #2a2a4a);
+  color: #f4f4f4;
+}
+
+/* AddMovieForm styles */
+.add-movie-form {
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.07);
+  border-radius: 16px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.6s ease-in;
+  display: flex;
+  flex-direction: column;
+}
+
+.add-movie-form h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+
+
+
+.add-movie-form input {
+  padding: 0.75rem;
+  margin-bottom: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.add-movie-form input:focus {
+  border-color: #cd0494;
+  outline: none;
+}
+
+.add-movie-form .error {
+  color: #e74c3c;
+  margin-top: -0.6rem;
+  margin-bottom: 0.8rem;
+  font-size: 0.9rem;
+}
+
+.add-movie-form button {
+  padding: 0.8rem;
+  background-color: #cd0494;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-movie-form button:hover {
+  background-color: #cd0494;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+.app-container {
+  padding: 1rem;
+  max-width: 70%;
+  margin: 0 auto;
+  margin-right: 8%;
+}
+
+.main-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #ffffff;
+}
+
+.movie-list {
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-left: 250px;
+}
+
+/* .movie-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  
+
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeSlideIn 0.8s ease-out forwards;
+
+
+  will-change: transform, opacity;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.movie-card:hover {
+  transform: translateY(0) scale(1.05); 
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.movie-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.movie-genre {
+  font-size: 0.9rem;
+  color: #c9c9ff;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.movie-card:hover .movie-genre {
+  color: #ff8ac4;
+} */
+
+.movie-status {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 1rem 1.5rem;
+  border-radius: 0.75rem;
+  margin-bottom: 2rem;
+
+  font-weight: bold;
+  color: #fbd38d;
+
+  animation: fadeSlideIn 0.8s ease-out forwards;
+  animation-delay: 0.1s;
+  opacity: 0;
+}
+
+.movie-card.watched .movie-status {
+  color: #90ee90;
+}
+
+.watch-btn {
+  padding: 0.5rem 1rem;
+  background-color: #cd0494;
+  color: white;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.watch-btn:hover {
+  background-color: #7f9cf5;
+  animation: bounce 0.4s ease;
+}
+
+.movie-stats {
+  /* align-items: center; */
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 1rem 1.5rem;
+  border-radius: 0.75rem;
+  margin-left: 20rem ;
+  margin-right: 20rem;
+  margin-bottom: 2rem;
+}
+
+.movie-stats h2 {
+  margin-bottom: 0.75rem;
+  color: #fcfcfc;
+}
+
+.movie-stats ul {
+  list-style: disc;
+  padding-left: 1.2rem;
+}
+.fav-btn,
+.delete-btn {
+  padding: 8px 12px;
+  margin: 6px 4px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.fav-btn {
+  background-color: #ffcccb;
+  color: #c0392b;
+}
+
+.fav-btn:hover {
+  background-color: #f1948a;
+  color: white;
+}
+
+.delete-btn {
+  background-color: #f8d7da;
+  color: #a94442;
+}
+
+.delete-btn:hover {
+  background-color: #e74c3c;
+  color: white;
+}
+
+/* Animations */
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeSlideIn 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.movie-list .movie-card:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.movie-list .movie-card:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.movie-list .movie-card:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+/* Bounce Animation for Button on Hover */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
